@@ -1,0 +1,4 @@
+C:/GE Series/Practice Engine/Practice/CMakeFiles/ALL_BUILD.dir
+C:/GE Series/Practice Engine/Practice/CMakeFiles/ZERO_CHECK.dir
+C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir
+C:/GE Series/Practice Engine/Practice/Sandbox/CMakeFiles/Sandbox.dir

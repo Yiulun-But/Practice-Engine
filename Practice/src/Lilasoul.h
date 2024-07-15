@@ -7,3 +7,7 @@
 // Reference to Entry Point
 
 #include "Lilasoul/EntryPoint.h"
+
+// Reference to Logging Component
+
+#include "Lilasoul/Log.h"

@@ -1,3 +1,9 @@
 [submodule "Practice/vendor/spdlog"]
 	path = Practice/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "Practice/vendor/glfw"]
+	path = Practice/vendor/glfw
+	url = https://github.com/Yiulun-But/glfw.git
+[submodule "Practice/vendor/imgui"]
+	path = Practice/vendor/imgui
+	url = https://github.com/Yiulun-But/imgui.git

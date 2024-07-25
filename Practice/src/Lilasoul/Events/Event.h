@@ -1,9 +1,8 @@
 #pragma once
 
 #include "Lilasoul/Core.h"
+#include "lspch.h"
 
-#include <string>
-#include <functional>
 
 namespace Lilasoul {
 
@@ -33,28 +32,30 @@ namespace Lilasoul {
         EventCategoryMouseButton = BIT(4),
    };
 
-#define EVENT_CLASS_TYPE(type) static EventType GetStaticType() { return EventType::##type } \
-                                virtual EventType GetEventType() const override { return GetStaticType(); } \
-                                virtual const char* GetName() const override { return GetStaticType(); }
+#define EVENT_CLASS_TYPE(type) static EventType GetStaticType() { return EventType::##type; }; \
+                                virtual EventType GetEventType() const override { return GetStaticType(); }; \
+                                virtual const char* GetName() const override { return #type; };
 
-#define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; }
+#define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; };
 
-    class LILASOUL_API Event
-    {
-        friend class EventDispatcher;
-    public:
-        virtual EventType GetEventType() const = 0;
-        virtual const char* GetName() const = 0;
-        virtual int GetCategoryFlags() const = 0;
-        virtual std::string ToString() const { return GetName(); };
+   class LILASOUL_API Event
+   {
+       friend class EventDispatcher;
+   public:
+       virtual EventType GetEventType() const = 0;
+       virtual const char* GetName() const = 0;
+       virtual int GetCategoryFlags() const = 0;
+       virtual std::string ToString() const { return GetName(); };
+       
+       inline bool Handled() { return m_Handled; };
 
-        inline bool IsInCategory(EventCategory category)
-        {
-            return GetCategoryFlags() & category;
-        };
-    protected:
-        bool m_Handled = false;
-    }
+       inline bool IsInCategory(EventCategory category)
+       {
+           return GetCategoryFlags() & category;
+       };
+   protected:
+       bool m_Handled = false;
+   };
 
     class EventDispatcher
     {
@@ -69,7 +70,7 @@ namespace Lilasoul {
         {
             if (m_Event.GetEventType() == T::GetStaticType())
             {
-                m_Event.m_Handled = func(*(*T)&m_Event);
+                m_Event.m_Handled = func(static_cast<T&>(m_Event));
                 return true;
             }
             return false;

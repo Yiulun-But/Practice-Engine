@@ -1,16 +1,36 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.20)
+
+# GLAD library
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/vendor/GLAD")
+
+# imgui library
+set(IMGUI_DIR "${CMAKE_CURRENT_SOURCE_DIR}/vendor/imgui")
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/vendor/imgui")
 
 # Project Lilasoul
-file(GLOB_RECURSE LILASOUL_SRC "${CMAKE_CURRENT_LIST_DIR}/src/*.cpp" "${CMAKE_CURRENT_LIST_DIR}/src/*.h")
+file(GLOB_RECURSE LILASOUL_SRC "${CMAKE_CURRENT_SOURCE_DIR}/src/Lilasoul/*.cpp" 
+                                "${CMAKE_CURRENT_SOURCE_DIR}/src/Lilasoul/*.h" 
+                                "${CMAKE_CURRENT_SOURCE_DIR}/src/Lilasoul.h"
+                                "${CMAKE_CURRENT_SOURCE_DIR}/src/Platform/*.cpp"
+                                "${CMAKE_CURRENT_SOURCE_DIR}/src/Platform/*.h")
 
 add_library(Lilasoul SHARED ${LILASOUL_SRC})
 
 target_include_directories(Lilasoul PRIVATE 
+    ${PROJECT_SOURCE_DIR}/Practice/vendor/glfw/include
     ${PROJECT_SOURCE_DIR}/Practice/vendor/spdlog/include
-    ${PROJECT_SOURCE_DIR}/Practice/
+    ${PROJECT_SOURCE_DIR}/Practice/src
+    ${PROJECT_SOURCE_DIR}/Practice/vendor/GLAD/include
+    ${PROJECT_SOURCE_DIR}/Practice/vendor/imgui
 )
 
-target_link_libraries(Lilasoul PRIVATE spdlog)
+# target_link_directories(Lilasoul PRIVATE 
+#     ${PROJECT_SOURCE_DIR}/Practice/vendor/glfw/src
+# )
+
+target_precompile_headers(Lilasoul PRIVATE "src/lspch.h")
+
+target_link_libraries(Lilasoul PRIVATE ${OPENGL_LIBRARIES} glfw glad imgui)
 
 foreach(OUTPUTCONFIG ${CMAKE_CONFIGURATION_TYPES})
     string(TOUPPER ${OUTPUTCONFIG} OUTPUTCONFIG_UPPER)
@@ -24,13 +44,14 @@ endforeach()
 if (MSVC)
     target_compile_definitions(Lilasoul PRIVATE LS_BUILD_DLL)
     target_compile_definitions(Lilasoul PRIVATE LS_PLATFORM_WINDOWS)
-    target_compile_options(Lilasoul PRIVATE /MT)
+    target_compile_definitions(Lilasoul PRIVATE GLFW_INCLUDE_NONE)
+    target_compile_options(Lilasoul PRIVATE /MDd)
 elseif(NOT MSVC)
     message(FATAL_ERROR "Does not support non-msvc yet!")
 endif()
 
 # Configuration specific settings
-set_property(TARGET Lilasoul PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>" CACHE INTERNAL "")
+set_property(TARGET Lilasoul PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL")
 
 foreach(CONFIG_TYPE IN ITEMS Debug Release Dist)
     string(TOUPPER ${CONFIG_TYPE} CONFIG_TYPE_UPPER)

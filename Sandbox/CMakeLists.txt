@@ -1,6 +1,9 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.20)
 
-file(GLOB_RECURSE SANDBOX_SRC "${CMAKE_CURRENT_LIST_DIR}/src/*.cpp" "${CMAKE_CURRENT_LIST_DIR}/src/*.h")
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+file(GLOB_RECURSE SANDBOX_SRC "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp" "${CMAKE_CURRENT_SOURCE_DIR}/src/*.h")
 
 add_executable(Sandbox ${SANDBOX_SRC})
 
@@ -22,13 +25,13 @@ endforeach()
 
 if (MSVC)
     target_compile_definitions(Sandbox PRIVATE LS_PLATFORM_WINDOWS)
-    target_compile_options(Sandbox PRIVATE /MT)
+    target_compile_options(Sandbox PRIVATE /MDd)
     add_custom_command(TARGET Sandbox POST_BUILD
 COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:Lilasoul> $<TARGET_FILE_DIR:Sandbox>)
 endif()
 
 # Configuration specific settings
-set_property(TARGET Sandbox PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+set_property(TARGET Sandbox PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL")
 
 foreach(CONFIG_TYPE IN ITEMS Debug Release Dist)
     string(TOUPPER ${CONFIG_TYPE} CONFIG_TYPE_UPPER)

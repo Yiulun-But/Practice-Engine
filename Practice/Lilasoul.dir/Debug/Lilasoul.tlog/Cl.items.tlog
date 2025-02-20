@@ -1,2 +1,9 @@
+C:\GE Series\Practice Engine\Practice\Practice\CMakeFiles\Lilasoul.dir\cmake_pch.cxx;C:\GE Series\Practice Engine\Practice\Practice\Lilasoul.dir\Debug\cmake_pch.obj
 C:\GE Series\Practice Engine\Practice\Practice\src\Lilasoul\Application.cpp;C:\GE Series\Practice Engine\Practice\Practice\Lilasoul.dir\Debug\Application.obj
+C:\GE Series\Practice Engine\Practice\Practice\src\Lilasoul\ImGui\ImGuiLayer.cpp;C:\GE Series\Practice Engine\Practice\Practice\Lilasoul.dir\Debug\ImGuiLayer.obj
+C:\GE Series\Practice Engine\Practice\Practice\src\Lilasoul\Layer.cpp;C:\GE Series\Practice Engine\Practice\Practice\Lilasoul.dir\Debug\Layer.obj
+C:\GE Series\Practice Engine\Practice\Practice\src\Lilasoul\LayerStack.cpp;C:\GE Series\Practice Engine\Practice\Practice\Lilasoul.dir\Debug\LayerStack.obj
 C:\GE Series\Practice Engine\Practice\Practice\src\Lilasoul\Log.cpp;C:\GE Series\Practice Engine\Practice\Practice\Lilasoul.dir\Debug\Log.obj
+C:\GE Series\Practice Engine\Practice\Practice\src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp;C:\GE Series\Practice Engine\Practice\Practice\Lilasoul.dir\Debug\ImGuiOpenGLRenderer.obj
+C:\GE Series\Practice Engine\Practice\Practice\src\Platform\Windows\WindowsInput.cpp;C:\GE Series\Practice Engine\Practice\Practice\Lilasoul.dir\Debug\WindowsInput.obj
+C:\GE Series\Practice Engine\Practice\Practice\src\Platform\Windows\WindowsWindow.cpp;C:\GE Series\Practice Engine\Practice\Practice\Lilasoul.dir\Debug\WindowsWindow.obj

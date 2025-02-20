@@ -1,5 +1,5 @@
 #pragma once
-
+#include "Lilasoul/Log.h"
 #include "Lilasoul/Layer.h"
 #include "Lilasoul/Events/KeyEvent.h"
 #include "Lilasoul/Events/MouseEvent.h"

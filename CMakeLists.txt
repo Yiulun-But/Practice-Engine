@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.20)
 
 project(Lilasoul)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Define configurations
@@ -21,11 +21,11 @@ set(CMAKE_BINARY_DIR "${CMAKE_SOURCE_DIR}/bin-int")
 # Set glfw path
 set(GLFW_DIR "${CMAKE_SOURCE_DIR}/bin-int")
 
-
 include("C:/Users/yiulu/vcpkg/scripts/buildsystems/vcpkg.cmake")
 
 
 find_package(OpenGL REQUIRED)
+
 
 #Update submodules as needed
 find_package(Git QUIET)
@@ -46,8 +46,11 @@ if(NOT EXISTS "${PROJECT_SOURCE_DIR}/Practice/vendor/glfw")
     message(FATAL_ERROR "The submodules were not downloaded! GIT_SUBMODULE was turned off or failed. Please update submodules and try again.")
 endif()
 
-#Add glfw
+# Add glfw
 add_subdirectory(${PROJECT_SOURCE_DIR}/Practice/vendor/glfw)
+
+#Add glm
+add_subdirectory(${PROJECT_SOURCE_DIR}/Practice/vendor/glm)
 
 
 # Add Macros

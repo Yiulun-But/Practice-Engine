@@ -11,9 +11,13 @@
 	#error Lilasoul only supports Windows!
 #endif
 
+#ifdef LS_DEBUG
+	#define LS_ENABLE_ASSERTS
+#endif
+
 #ifdef LS_ENABLE_ASSERTS
-	#define LS_ASSERT(x, ...) { if(!(x)) { HZ_ERROR("Assertion failed: {0}", __VA_ARGS__); __debugbreak() } }
-	#define LS_CORE_ASSERT(x, ...) { if(!(x)) { HZ_CORE_ERROR("Assertion failed: {0}", __VA_ARGS__); __debugbreak() } }
+	#define LS_ASSERT(x, ...) { if(!(x)) { LS_ERROR("Assertion failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define LS_CORE_ASSERT(x, ...) { if(!(x)) { LS_CORE_ERROR("Assertion failed: {0}", __VA_ARGS__); __debugbreak(); } }
 #else
 	#define LS_ASSERT(x, ...)
 	#define LS_CORE_ASSERT(x, ...)

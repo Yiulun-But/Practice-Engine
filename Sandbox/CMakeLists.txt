@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 file(GLOB_RECURSE SANDBOX_SRC "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp" "${CMAKE_CURRENT_SOURCE_DIR}/src/*.h")
@@ -9,6 +9,7 @@ add_executable(Sandbox ${SANDBOX_SRC})
 
 target_include_directories(Sandbox PRIVATE 
     ${PROJECT_SOURCE_DIR}/Practice/vendor/spdlog/include
+    ${PROJECT_SOURCE_DIR}/Practice/vendor/glm/glm
     ${PROJECT_SOURCE_DIR}/Practice/src
 )
 
@@ -24,6 +25,7 @@ foreach(OUTPUTCONFIG ${CMAKE_CONFIGURATION_TYPES})
 endforeach()
 
 if (MSVC)
+    set_property(DIRECTORY ${PROJECT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT Sandbox)
     target_compile_definitions(Sandbox PRIVATE LS_PLATFORM_WINDOWS)
     target_compile_options(Sandbox PRIVATE /MDd)
     add_custom_command(TARGET Sandbox POST_BUILD

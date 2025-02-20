@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\GE Series\Practice Engine\Practice\Practice\vendor\GLAD\src\glad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\GE Series\Practice Engine\Practice\Practice\vendor\GLAD\include\glad\glad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\GE Series\Practice Engine\Practice\Practice\vendor\GLAD\include\KHR\khrplatform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\GE Series\Practice Engine\Practice\Practice\vendor\GLAD\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{E0D0B693-9636-3A67-ACCF-B1BED387F517}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{BE6B1BAF-D763-3652-91C2-E3C331B18E91}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

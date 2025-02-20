@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Dist|x64">
+      <Configuration>Dist</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F99CAC7B-E0DD-3168-99D5-3224EE4CED46}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <VcpkgEnabled>false</VcpkgEnabled>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>Lilasoul</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="do_not_import_user.props" Condition="exists('do_not_import_user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\GE Series\Practice Engine\Practice\bin\Debug-Windows-AMD64\Lilasoul\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Lilasoul.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Lilasoul</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\GE Series\Practice Engine\Practice\bin\Release-Windows-AMD64\Lilasoul\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Lilasoul.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Lilasoul</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">C:\GE Series\Practice Engine\Practice\bin\Dist-Windows-AMD64\Lilasoul\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">Lilasoul.dir\Dist\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">Lilasoul</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\GE Series\Practice Engine\Practice\Practice\vendor\glfw\include;C:\GE Series\Practice Engine\Practice\Practice\vendor\spdlog\include;C:\GE Series\Practice Engine\Practice\Practice\src;C:\GE Series\Practice Engine\Practice\Practice\vendor\GLAD\include;C:\GE Series\Practice Engine\Practice\Practice\vendor\imgui;C:\GE Series\Practice Engine\Practice\Practice\vendor\glm\glm;C:\GE Series\Practice Engine\Practice\Practice\vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Debug/cmake_pch.hxx</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>C:/GE Series/Practice Engine/Practice/Practice/Lilasoul.dir/Debug/cmake_pch.pch</PrecompiledHeaderOutputFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;LS_BUILD_DLL;LS_PLATFORM_WINDOWS;GLFW_INCLUDE_NONE;LS_DEBUG;LS_RELEASE;LS_DIST;CMAKE_INTDIR="Debug";Lilasoul_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;LS_BUILD_DLL;LS_PLATFORM_WINDOWS;GLFW_INCLUDE_NONE;LS_DEBUG;LS_RELEASE;LS_DIST;CMAKE_INTDIR=\"Debug\";Lilasoul_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\GE Series\Practice Engine\Practice\Practice\vendor\glfw\include;C:\GE Series\Practice Engine\Practice\Practice\vendor\spdlog\include;C:\GE Series\Practice Engine\Practice\Practice\src;C:\GE Series\Practice Engine\Practice\Practice\vendor\GLAD\include;C:\GE Series\Practice Engine\Practice\Practice\vendor\imgui;C:\GE Series\Practice Engine\Practice\Practice\vendor\glm\glm;C:\GE Series\Practice Engine\Practice\Practice\vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\GE Series\Practice Engine\Practice\Practice\vendor\glfw\include;C:\GE Series\Practice Engine\Practice\Practice\vendor\spdlog\include;C:\GE Series\Practice Engine\Practice\Practice\src;C:\GE Series\Practice Engine\Practice\Practice\vendor\GLAD\include;C:\GE Series\Practice Engine\Practice\Practice\vendor\imgui;C:\GE Series\Practice Engine\Practice\Practice\vendor\glm\glm;C:\GE Series\Practice Engine\Practice\Practice\vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/Users/yiulu/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary "C:/GE Series/Practice Engine/Practice/bin/Debug-Windows-AMD64/Lilasoul/Lilasoul.dll" -installedDir C:/Users/yiulu/vcpkg/installed/x64-windows/debug/bin -OutVariable out
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;vendor\glfw\src\Debug\glfw3.lib;vendor\GLAD\Debug\glad.lib;vendor\imgui\Debug\imguid.lib;vendor\glm\glm\Debug\glm.lib;opengl32.lib;glu32.lib;vendor\glfw\src\Debug\glfw3.lib;vendor\GLAD\Debug\glad.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/GE Series/Practice Engine/Practice/bin/Debug-Windows-AMD64/Lilasoul/Lilasoul.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/GE Series/Practice Engine/Practice/bin/Debug-Windows-AMD64/Lilasoul/Lilasoul.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\GE Series\Practice Engine\Practice\Practice\vendor\glfw\include;C:\GE Series\Practice Engine\Practice\Practice\vendor\spdlog\include;C:\GE Series\Practice Engine\Practice\Practice\src;C:\GE Series\Practice Engine\Practice\Practice\vendor\GLAD\include;C:\GE Series\Practice Engine\Practice\Practice\vendor\imgui;C:\GE Series\Practice Engine\Practice\Practice\vendor\glm\glm;C:\GE Series\Practice Engine\Practice\Practice\vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) -O3</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Release/cmake_pch.hxx</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>C:/GE Series/Practice Engine/Practice/Practice/Lilasoul.dir/Release/cmake_pch.pch</PrecompiledHeaderOutputFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;LS_BUILD_DLL;LS_PLATFORM_WINDOWS;GLFW_INCLUDE_NONE;LS_DEBUG;LS_RELEASE;LS_DIST;CMAKE_INTDIR="Release";Lilasoul_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;LS_BUILD_DLL;LS_PLATFORM_WINDOWS;GLFW_INCLUDE_NONE;LS_DEBUG;LS_RELEASE;LS_DIST;CMAKE_INTDIR=\"Release\";Lilasoul_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\GE Series\Practice Engine\Practice\Practice\vendor\glfw\include;C:\GE Series\Practice Engine\Practice\Practice\vendor\spdlog\include;C:\GE Series\Practice Engine\Practice\Practice\src;C:\GE Series\Practice Engine\Practice\Practice\vendor\GLAD\include;C:\GE Series\Practice Engine\Practice\Practice\vendor\imgui;C:\GE Series\Practice Engine\Practice\Practice\vendor\glm\glm;C:\GE Series\Practice Engine\Practice\Practice\vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\GE Series\Practice Engine\Practice\Practice\vendor\glfw\include;C:\GE Series\Practice Engine\Practice\Practice\vendor\spdlog\include;C:\GE Series\Practice Engine\Practice\Practice\src;C:\GE Series\Practice Engine\Practice\Practice\vendor\GLAD\include;C:\GE Series\Practice Engine\Practice\Practice\vendor\imgui;C:\GE Series\Practice Engine\Practice\Practice\vendor\glm\glm;C:\GE Series\Practice Engine\Practice\Practice\vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/Users/yiulu/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary "C:/GE Series/Practice Engine/Practice/bin/Release-Windows-AMD64/Lilasoul/Lilasoul.dll" -installedDir C:/Users/yiulu/vcpkg/installed/x64-windows/bin -OutVariable out
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;vendor\glfw\src\Release\glfw3.lib;vendor\GLAD\Release\glad.lib;vendor\imgui\Release\imgui.lib;vendor\glm\glm\Release\glm.lib;opengl32.lib;glu32.lib;vendor\glfw\src\Release\glfw3.lib;vendor\GLAD\Release\glad.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/GE Series/Practice Engine/Practice/bin/Release-Windows-AMD64/Lilasoul/Lilasoul.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/GE Series/Practice Engine/Practice/bin/Release-Windows-AMD64/Lilasoul/Lilasoul.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\GE Series\Practice Engine\Practice\Practice\vendor\glfw\include;C:\GE Series\Practice Engine\Practice\Practice\vendor\spdlog\include;C:\GE Series\Practice Engine\Practice\Practice\src;C:\GE Series\Practice Engine\Practice\Practice\vendor\GLAD\include;C:\GE Series\Practice Engine\Practice\Practice\vendor\imgui;C:\GE Series\Practice Engine\Practice\Practice\vendor\glm\glm;C:\GE Series\Practice Engine\Practice\Practice\vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) -O3</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Dist/cmake_pch.hxx</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>C:/GE Series/Practice Engine/Practice/Practice/Lilasoul.dir/Dist/cmake_pch.pch</PrecompiledHeaderOutputFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;LS_BUILD_DLL;LS_PLATFORM_WINDOWS;GLFW_INCLUDE_NONE;LS_DEBUG;LS_RELEASE;LS_DIST;CMAKE_INTDIR="Dist";Lilasoul_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;LS_BUILD_DLL;LS_PLATFORM_WINDOWS;GLFW_INCLUDE_NONE;LS_DEBUG;LS_RELEASE;LS_DIST;CMAKE_INTDIR=\"Dist\";Lilasoul_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\GE Series\Practice Engine\Practice\Practice\vendor\glfw\include;C:\GE Series\Practice Engine\Practice\Practice\vendor\spdlog\include;C:\GE Series\Practice Engine\Practice\Practice\src;C:\GE Series\Practice Engine\Practice\Practice\vendor\GLAD\include;C:\GE Series\Practice Engine\Practice\Practice\vendor\imgui;C:\GE Series\Practice Engine\Practice\Practice\vendor\glm\glm;C:\GE Series\Practice Engine\Practice\Practice\vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\GE Series\Practice Engine\Practice\Practice\vendor\glfw\include;C:\GE Series\Practice Engine\Practice\Practice\vendor\spdlog\include;C:\GE Series\Practice Engine\Practice\Practice\src;C:\GE Series\Practice Engine\Practice\Practice\vendor\GLAD\include;C:\GE Series\Practice Engine\Practice\Practice\vendor\imgui;C:\GE Series\Practice Engine\Practice\Practice\vendor\glm\glm;C:\GE Series\Practice Engine\Practice\Practice\vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/Users/yiulu/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary "C:/GE Series/Practice Engine/Practice/bin/Dist-Windows-AMD64/Lilasoul/Lilasoul.dll" -installedDir C:/Users/yiulu/vcpkg/installed/x64-windows/bin -OutVariable out
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;vendor\glfw\src\Dist\glfw3.lib;vendor\GLAD\Dist\glad.lib;vendor\imgui\Dist\imgui.lib;vendor\glm\glm\Dist\glm.lib;opengl32.lib;glu32.lib;vendor\glfw\src\Dist\glfw3.lib;vendor\GLAD\Dist\glad.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/GE Series/Practice Engine/Practice/bin/Dist-Windows-AMD64/Lilasoul/Lilasoul.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/GE Series/Practice Engine/Practice/bin/Dist-Windows-AMD64/Lilasoul/Lilasoul.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\GE Series\Practice Engine\Practice\Practice\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/GE Series/Practice Engine/Practice/Practice/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/GE Series/Practice Engine/Practice" "-BC:/GE Series/Practice Engine/Practice" --check-stamp-file "C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\GE Series\Practice Engine\Practice\Practice\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/GE Series/Practice Engine/Practice/Practice/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/GE Series/Practice Engine/Practice" "-BC:/GE Series/Practice Engine/Practice" --check-stamp-file "C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\GE Series\Practice Engine\Practice\Practice\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">Building Custom Rule C:/GE Series/Practice Engine/Practice/Practice/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/GE Series/Practice Engine/Practice" "-BC:/GE Series/Practice Engine/Practice" --check-stamp-file "C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">C:\GE Series\Practice Engine\Practice\Practice\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\GE Series\Practice Engine\Practice\Practice\CMakeFiles\Lilasoul.dir\cmake_pch.cxx">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Debug/cmake_pch.hxx</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/GE Series/Practice Engine/Practice/Practice/Lilasoul.dir/Debug/cmake_pch.pch</PrecompiledHeaderOutputFile>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Release/cmake_pch.hxx</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/GE Series/Practice Engine/Practice/Practice/Lilasoul.dir/Release/cmake_pch.pch</PrecompiledHeaderOutputFile>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Dist/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Dist/cmake_pch.hxx</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">C:/GE Series/Practice Engine/Practice/Practice/Lilasoul.dir/Dist/cmake_pch.pch</PrecompiledHeaderOutputFile>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">false</ScanSourceforModuleDependencies>
+    </ClCompile>
+    <ClInclude Include="C:\GE Series\Practice Engine\Practice\Practice\src\Lilasoul.h" />
+    <ClCompile Include="C:\GE Series\Practice Engine\Practice\Practice\src\Lilasoul\Application.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Dist/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">false</ScanSourceforModuleDependencies>
+    </ClCompile>
+    <ClInclude Include="C:\GE Series\Practice Engine\Practice\Practice\src\Lilasoul\Application.h" />
+    <ClInclude Include="C:\GE Series\Practice Engine\Practice\Practice\src\Lilasoul\Core.h" />
+    <ClInclude Include="C:\GE Series\Practice Engine\Practice\Practice\src\Lilasoul\EntryPoint.h" />
+    <ClInclude Include="C:\GE Series\Practice Engine\Practice\Practice\src\Lilasoul\Events\ApplicationEvent.h" />
+    <ClInclude Include="C:\GE Series\Practice Engine\Practice\Practice\src\Lilasoul\Events\Event.h" />
+    <ClInclude Include="C:\GE Series\Practice Engine\Practice\Practice\src\Lilasoul\Events\KeyEvent.h" />
+    <ClInclude Include="C:\GE Series\Practice Engine\Practice\Practice\src\Lilasoul\Events\MouseEvent.h" />
+    <ClCompile Include="C:\GE Series\Practice Engine\Practice\Practice\src\Lilasoul\ImGui\ImGuiLayer.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Dist/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">false</ScanSourceforModuleDependencies>
+    </ClCompile>
+    <ClInclude Include="C:\GE Series\Practice Engine\Practice\Practice\src\Lilasoul\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="C:\GE Series\Practice Engine\Practice\Practice\src\Lilasoul\Input.h" />
+    <ClInclude Include="C:\GE Series\Practice Engine\Practice\Practice\src\Lilasoul\Keycodes.h" />
+    <ClCompile Include="C:\GE Series\Practice Engine\Practice\Practice\src\Lilasoul\Layer.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Dist/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">false</ScanSourceforModuleDependencies>
+    </ClCompile>
+    <ClInclude Include="C:\GE Series\Practice Engine\Practice\Practice\src\Lilasoul\Layer.h" />
+    <ClCompile Include="C:\GE Series\Practice Engine\Practice\Practice\src\Lilasoul\LayerStack.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Dist/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">false</ScanSourceforModuleDependencies>
+    </ClCompile>
+    <ClInclude Include="C:\GE Series\Practice Engine\Practice\Practice\src\Lilasoul\LayerStack.h" />
+    <ClCompile Include="C:\GE Series\Practice Engine\Practice\Practice\src\Lilasoul\Log.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Dist/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">false</ScanSourceforModuleDependencies>
+    </ClCompile>
+    <ClInclude Include="C:\GE Series\Practice Engine\Practice\Practice\src\Lilasoul\Log.h" />
+    <ClInclude Include="C:\GE Series\Practice Engine\Practice\Practice\src\Lilasoul\MouseButtonCodes.h" />
+    <ClInclude Include="C:\GE Series\Practice Engine\Practice\Practice\src\Lilasoul\Window.h" />
+    <ClCompile Include="C:\GE Series\Practice Engine\Practice\Practice\src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Dist/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">false</ScanSourceforModuleDependencies>
+    </ClCompile>
+    <ClInclude Include="C:\GE Series\Practice Engine\Practice\Practice\src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
+    <ClInclude Include="C:\GE Series\Practice Engine\Practice\Practice\src\Platform\OpenGL\ImGuiOpenGLRendererLoader.h" />
+    <ClCompile Include="C:\GE Series\Practice Engine\Practice\Practice\src\Platform\Windows\WindowsInput.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Dist/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">false</ScanSourceforModuleDependencies>
+    </ClCompile>
+    <ClInclude Include="C:\GE Series\Practice Engine\Practice\Practice\src\Platform\Windows\WindowsInput.h" />
+    <ClCompile Include="C:\GE Series\Practice Engine\Practice\Practice\src\Platform\Windows\WindowsWindow.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">C:/GE Series/Practice Engine/Practice/Practice/CMakeFiles/Lilasoul.dir/Dist/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">false</ScanSourceforModuleDependencies>
+    </ClCompile>
+    <ClInclude Include="C:\GE Series\Practice Engine\Practice\Practice\src\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="C:\GE Series\Practice Engine\Practice\Practice\CMakeFiles\Lilasoul.dir\Debug\cmake_pch.hxx" />
+    <ClInclude Include="C:\GE Series\Practice Engine\Practice\Practice\CMakeFiles\Lilasoul.dir\Release\cmake_pch.hxx" />
+    <ClInclude Include="C:\GE Series\Practice Engine\Practice\Practice\CMakeFiles\Lilasoul.dir\Dist\cmake_pch.hxx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\GE Series\Practice Engine\Practice\ZERO_CHECK.vcxproj">
+      <Project>{9305BBEC-6AA1-39D2-B0BE-ED1898DDF0B9}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\GE Series\Practice Engine\Practice\Practice\vendor\GLAD\glad.vcxproj">
+      <Project>{2D71B047-CC6A-3C1B-884B-AD448CA83AD1}</Project>
+      <Name>glad</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GE Series\Practice Engine\Practice\Practice\vendor\glfw\src\glfw.vcxproj">
+      <Project>{63B6C87A-0B0B-3056-B9F9-E3ABA87CDD1A}</Project>
+      <Name>glfw</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GE Series\Practice Engine\Practice\Practice\vendor\glm\glm\glm.vcxproj">
+      <Project>{CFF3EEA3-2A8E-3783-922C-61D39FCE2807}</Project>
+      <Name>glm</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GE Series\Practice Engine\Practice\Practice\vendor\imgui\imgui.vcxproj">
+      <Project>{B204F28F-77F8-3FC8-B4B3-D2250BCA316F}</Project>
+      <Name>imgui</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

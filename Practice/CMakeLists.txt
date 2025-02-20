@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
+set(CMAKE_CXX_STANDARD 17)
 
 # GLAD library
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/vendor/GLAD")
@@ -22,6 +23,8 @@ target_include_directories(Lilasoul PRIVATE
     ${PROJECT_SOURCE_DIR}/Practice/src
     ${PROJECT_SOURCE_DIR}/Practice/vendor/GLAD/include
     ${PROJECT_SOURCE_DIR}/Practice/vendor/imgui
+    ${PROJECT_SOURCE_DIR}/Practice/vendor/glm/glm
+
 )
 
 # target_link_directories(Lilasoul PRIVATE 
@@ -30,7 +33,7 @@ target_include_directories(Lilasoul PRIVATE
 
 target_precompile_headers(Lilasoul PRIVATE "src/lspch.h")
 
-target_link_libraries(Lilasoul PRIVATE ${OPENGL_LIBRARIES} glfw glad imgui)
+target_link_libraries(Lilasoul PRIVATE ${OPENGL_LIBRARIES} glfw glad imgui glm::glm)
 
 foreach(OUTPUTCONFIG ${CMAKE_CONFIGURATION_TYPES})
     string(TOUPPER ${OUTPUTCONFIG} OUTPUTCONFIG_UPPER)

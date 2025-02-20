@@ -1,13 +1,18 @@
 #include "Application.h"
 #include "Lilasoul/Log.h"
 #include "glad/glad.h"
-// #include <iostream>
 
-namespace Lilasoul {
+#include "Input.h"
+
+
+
+
+namespace Lilasoul
+{
 
 #define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
 
-	Application* Application::s_Instance = nullptr;
+	Application *Application::s_Instance = nullptr;
 
 	Application::Application()
 	{
@@ -21,12 +26,12 @@ namespace Lilasoul {
 		glGenVertexArrays(1, &id);
 	}
 
-	void Application::OnEvent(Event& e)
+	void Application::OnEvent(Event &e)
 	{
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
 
-		LS_CORE_INFO(e.ToString());
+		// LS_CORE_INFO(e.ToString());
 
 		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin();)
 		{
@@ -36,37 +41,39 @@ namespace Lilasoul {
 		};
 	}
 
-	void Application::Run() 
+	void Application::Run()
 	{
 		while (m_Running)
 		{
 			glClearColor(0.5, 0.1, 0.4, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
 
-			for (Layer* layer : m_LayerStack)
+			for (Layer *layer : m_LayerStack)
 				layer->OnUpdate();
+
+			// auto [x, y] = Input::GetMousePosition();
+			// LS_CORE_TRACE("{0}, {1}", x, y);
 
 			m_Window->OnUpdate();
 		}
 	}
-    void Application::PushLayer(Layer *layer)
-    {
+	void Application::PushLayer(Layer *layer)
+	{
 		m_LayerStack.PushLayer(layer);
 		layer->OnAttach();
-    }
+	}
 
-    void Application::PushOverlay(Layer *layer)
-    {
+	void Application::PushOverlay(Layer *layer)
+	{
 		m_LayerStack.PushOverlay(layer);
 		layer->OnAttach();
-    }
+	}
 
-    Application::~Application()
+	Application::~Application()
 	{
 	}
 
-
-	bool Application::OnWindowClose(WindowCloseEvent& e)
+	bool Application::OnWindowClose(WindowCloseEvent &e)
 	{
 		m_Running = false;
 		return true;

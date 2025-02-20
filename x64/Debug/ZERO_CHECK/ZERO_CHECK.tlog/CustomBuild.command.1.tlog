@@ -1,0 +1,10 @@
+^C:\GE SERIES\PRACTICE ENGINE\PRACTICE\CMAKEFILES\CEF5BF4C2F635925406E49D7F033F354\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/GE Series/Practice Engine/Practice" "-BC:/GE Series/Practice Engine/Practice" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/GE Series/Practice Engine/Practice/Lilasoul.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

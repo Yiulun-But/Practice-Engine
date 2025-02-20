@@ -10,12 +10,14 @@ public:
 
 	void OnUpdate() override
 	{
-		LS_INFO("ExampleLayer::Update");
+		if (Lilasoul::Input::IsKeyPressed(LS_KEY_TAB))
+			LS_TRACE("Tab Key is Pressed!");
+		// LS_INFO("ExampleLayer::Update");
 	}
 
 	void OnEvent(Lilasoul::Event& event) override
 	{
-		LS_TRACE(event.ToString());
+		// LS_TRACE(event.ToString());
 	}
 };
 

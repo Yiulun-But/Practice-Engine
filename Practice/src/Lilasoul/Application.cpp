@@ -1,9 +1,9 @@
 #include "Application.h"
 #include "Lilasoul/Log.h"
-#include "glad/glad.h"
 
 #include "Input.h"
 
+#include "glad/glad.h"
 
 
 
@@ -22,8 +22,8 @@ namespace Lilasoul
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
 
-		unsigned int id;
-		glGenVertexArrays(1, &id);
+		m_ImGuiLayer = new ImGuiLayer();
+		PushOverlay(m_ImGuiLayer);
 	}
 
 	void Application::OnEvent(Event &e)
@@ -51,8 +51,10 @@ namespace Lilasoul
 			for (Layer *layer : m_LayerStack)
 				layer->OnUpdate();
 
-			// auto [x, y] = Input::GetMousePosition();
-			// LS_CORE_TRACE("{0}, {1}", x, y);
+			m_ImGuiLayer->Begin();
+			for (Layer *layer : m_LayerStack)
+				layer->OnImGuiRender();
+			m_ImGuiLayer->End();
 
 			m_Window->OnUpdate();
 		}

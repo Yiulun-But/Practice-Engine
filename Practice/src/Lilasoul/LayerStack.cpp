@@ -5,7 +5,6 @@ namespace Lilasoul {
 
     LayerStack::LayerStack()
     {
-        m_LayerInsert = m_Layers.begin();
     };
 
     LayerStack::~LayerStack()
@@ -16,13 +15,7 @@ namespace Lilasoul {
 
     void LayerStack::PushLayer(Layer* layer)
     {
-        if (m_Layers.size() != 0)
-            m_LayerInsert = m_Layers.emplace(m_LayerInsert, layer);
-        else
-        {
-            m_Layers.emplace_back(layer);
-            m_LayerInsert = m_Layers.begin();
-        }
+            m_Layers.emplace(m_Layers.begin() + m_LayerInsertIndex, layer);
     };
 
     void LayerStack::PushOverlay(Layer* layer)
@@ -36,7 +29,7 @@ namespace Lilasoul {
         if (it != m_Layers.end())
         {
             m_Layers.erase(it);
-            m_LayerInsert--;
+            m_LayerInsertIndex--;
         }
     };
 

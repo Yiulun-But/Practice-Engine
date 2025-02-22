@@ -2,12 +2,14 @@
 #include "ImGuiLayer.h"
 #include "Lilasoul/Application.h"
 
-#include "backends/imgui_impl_glfw.cpp"
-#include "backends/imgui_impl_opengl3.cpp"
+#include "backends/imgui_impl_glfw.h"
+#include "backends/imgui_impl_opengl3.h"
+
+#include "glad/glad.h"
+#include "GLFW/glfw3.h"
 
 namespace Lilasoul {
 
-    static ImGuiKey ImGui_ImplGlfw_KeyToImGuiKey(int key);
 
     ImGuiLayer::ImGuiLayer()
         : Layer("ImGuiLayer")
@@ -65,7 +67,7 @@ namespace Lilasoul {
             GLFWwindow* backup_current_context = glfwGetCurrentContext();
             ImGui::UpdatePlatformWindows();
             ImGui::RenderPlatformWindowsDefault();
-            glfwMakeContextCurrent(backup_current_contex);
+            glfwMakeContextCurrent(backup_current_context);
         }
     };
 

@@ -27,9 +27,6 @@ endforeach()
 if (MSVC)
     set_property(DIRECTORY ${PROJECT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT Sandbox)
     target_compile_definitions(Sandbox PRIVATE LS_PLATFORM_WINDOWS)
-    target_compile_options(Sandbox PRIVATE /MDd)
-    add_custom_command(TARGET Sandbox POST_BUILD
-COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:Lilasoul> $<TARGET_FILE_DIR:Sandbox>)
 endif()
 
 # Configuration specific settings

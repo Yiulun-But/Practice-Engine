@@ -15,7 +15,7 @@ file(GLOB_RECURSE LILASOUL_SRC "${CMAKE_CURRENT_SOURCE_DIR}/src/Lilasoul/*.cpp"
                                 "${CMAKE_CURRENT_SOURCE_DIR}/src/Platform/*.cpp"
                                 "${CMAKE_CURRENT_SOURCE_DIR}/src/Platform/*.h")
 
-add_library(Lilasoul SHARED ${LILASOUL_SRC})
+add_library(Lilasoul STATIC ${LILASOUL_SRC})
 
 target_include_directories(Lilasoul PRIVATE 
     ${PROJECT_SOURCE_DIR}/Practice/vendor/glfw/include
@@ -48,7 +48,6 @@ if (MSVC)
     target_compile_definitions(Lilasoul PRIVATE LS_BUILD_DLL)
     target_compile_definitions(Lilasoul PRIVATE LS_PLATFORM_WINDOWS)
     target_compile_definitions(Lilasoul PRIVATE GLFW_INCLUDE_NONE)
-    target_compile_options(Lilasoul PRIVATE /MDd)
 elseif(NOT MSVC)
     message(FATAL_ERROR "Does not support non-msvc yet!")
 endif()

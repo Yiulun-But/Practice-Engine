@@ -1,13 +1,16 @@
 #pragma once
 
 #ifdef LS_PLATFORM_WINDOWS
-	#ifdef LS_BUILD_DLL
-		#define LILASOUL_API __declspec(dllexport)
+	#ifdef LS_DYNAMIC_LINK
+		#ifdef LS_BUILD_DLL
+			#define LILASOUL_API __declspec(dllexport)
+		#else
+			#define LILASOUL_API __declspec(dllimport)
+		#endif
 	#else
-		#define LILASOUL_API __declspec(dllimport)
+		#define LILASOUL_API
 	#endif
 #else
-	#define LILASOUL_API
 	#error Lilasoul only supports Windows!
 #endif
 

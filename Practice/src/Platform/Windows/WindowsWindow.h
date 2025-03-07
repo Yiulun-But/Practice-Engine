@@ -1,7 +1,8 @@
 #pragma once
 
-#include <GLFW/glfw3.h>
 #include "Lilasoul/Window.h"
+#include "Lilasoul/Renderer/GraphicsContext.h"
+#include <GLFW/glfw3.h>
 
 namespace Lilasoul {
 
@@ -27,6 +28,7 @@ namespace Lilasoul {
         virtual void Shutdown();
     private:
         GLFWwindow* m_Window;
+        GraphicsContext* m_Context;
 
         struct WindowData
         {

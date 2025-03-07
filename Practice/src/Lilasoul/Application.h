@@ -5,9 +5,13 @@
 #include "lspch.h"
 #include "Window.h"
 #include "Lilasoul/Events/ApplicationEvent.h"
-#include "LayerStack.h"
+#include "Lilasoul/LayerStack.h"
 
-#include "ImGui/ImGuiLayer.h"
+#include "Lilasoul/ImGui/ImGuiLayer.h"
+
+#include "Lilasoul/Renderer/Shader.h"
+#include "Lilasoul/Renderer/Buffer.h"
+#include "Lilasoul/Renderer/VertexArray.h"
 
 namespace Lilasoul {
 
@@ -33,6 +37,12 @@ namespace Lilasoul {
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
+
+
+		std::shared_ptr<Shader> m_Shader;
+		std::shared_ptr<VertexBuffer> m_VertexBuffer;
+		std::shared_ptr<IndexBuffer> m_IndexBuffer;
+		std::shared_ptr<VertexArray> m_VertexArray;
 
 	private:
 		static Application* s_Instance;

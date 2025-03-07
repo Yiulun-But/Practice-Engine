@@ -14,6 +14,7 @@ namespace Lilasoul
 
 	Application *Application::s_Instance = nullptr;
 
+
 	Application::Application()
 	{
 		LS_CORE_ASSERT(!s_Instance, "Application already exists!");
@@ -24,6 +25,59 @@ namespace Lilasoul
 
 		m_ImGuiLayer = new ImGuiLayer();
 		PushOverlay(m_ImGuiLayer);
+
+		m_VertexArray.reset(VertexArray::Create());
+
+		float vertices[7 * 3] = {
+			-0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f,
+			 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f,
+			 0.0f,  0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f
+		};
+
+		m_VertexBuffer.reset(VertexBuffer::Create(vertices, sizeof(vertices)));
+
+		BufferLayout layout = {
+			{ ShaderDataType::Float3, "a_Position" },
+			{ ShaderDataType::Float4, "a_Color" }
+		};
+
+		m_VertexBuffer->SetLayout(layout);
+
+		m_VertexArray->AddVertexBuffer(m_VertexBuffer);
+
+		uint32_t indices[3] = { 0, 1, 2 };
+		m_IndexBuffer.reset(IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+		m_VertexArray->SetIndexBuffer(m_IndexBuffer);
+
+		std::string vertexSrc = R"(
+			#version 330 core
+
+			layout(location = 0) in vec3 a_Position;
+			layout(location = 1) in vec4 a_Color;
+
+			out vec4 vColor;
+
+			void main()
+			{
+				vColor = a_Color;
+				gl_Position = vec4(a_Position, 1.0);
+			}
+		)";
+
+		std::string fragmentSrc = R"(
+			#version 330 core
+
+			layout(location = 0) out vec4 color;
+
+			in vec4 vColor;
+
+			void main()
+			{
+				color = vColor;
+			}
+		)";
+
+		m_Shader.reset(new Shader(vertexSrc, fragmentSrc));
 	}
 
 	void Application::OnEvent(Event &e)
@@ -45,8 +99,12 @@ namespace Lilasoul
 	{
 		while (m_Running)
 		{
-			glClearColor(0.5, 0.1, 0.4, 1);
+			glClearColor(0.1, 0.1, 0.1, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
+
+			m_Shader->Bind();
+			m_VertexArray->Bind();
+			glDrawElements(GL_TRIANGLES, m_IndexBuffer->GetCount(), GL_UNSIGNED_INT, nullptr);
 
 			for (Layer *layer : m_LayerStack)
 				layer->OnUpdate();

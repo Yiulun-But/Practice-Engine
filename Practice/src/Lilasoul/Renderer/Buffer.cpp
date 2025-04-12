@@ -10,8 +10,8 @@ namespace Lilasoul {
     {
         switch(Renderer::GetAPI()) 
         {
-            case RendererAPI::None:      LS_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
-            case RendererAPI::OpenGL:    return new OpenGLVertexBuffer(vertices, size);
+            case RendererAPI::API::None:      LS_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
+            case RendererAPI::API::OpenGL:    return new OpenGLVertexBuffer(vertices, size);
         }
 
         LS_CORE_ASSERT(false, "Unknown RendererAPI!");
@@ -22,8 +22,8 @@ namespace Lilasoul {
     {
         switch(Renderer::GetAPI()) 
         {
-            case RendererAPI::None:      LS_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
-            case RendererAPI::OpenGL:    return new OpenGLIndexBuffer(indices, size);
+            case RendererAPI::API::None:      LS_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
+            case RendererAPI::API::OpenGL:    return new OpenGLIndexBuffer(indices, size);
         }
 
         LS_CORE_ASSERT(false, "Unknown RendererAPI!");

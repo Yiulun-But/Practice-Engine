@@ -3,8 +3,8 @@
 
 #include "Input.h"
 
-#include "glad/glad.h"
-
+#include "Lilasoul/Renderer/Renderer.h"
+#include "Lilasoul/Renderer/RendererCommand.h"
 
 
 namespace Lilasoul
@@ -34,6 +34,7 @@ namespace Lilasoul
 			 0.0f,  0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f
 		};
 
+		std::shared_ptr<VertexBuffer> m_VertexBuffer;
 		m_VertexBuffer.reset(VertexBuffer::Create(vertices, sizeof(vertices)));
 
 		BufferLayout layout = {
@@ -46,6 +47,7 @@ namespace Lilasoul
 		m_VertexArray->AddVertexBuffer(m_VertexBuffer);
 
 		uint32_t indices[3] = { 0, 1, 2 };
+		std::shared_ptr<IndexBuffer> m_IndexBuffer;
 		m_IndexBuffer.reset(IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 		m_VertexArray->SetIndexBuffer(m_IndexBuffer);
 
@@ -99,12 +101,15 @@ namespace Lilasoul
 	{
 		while (m_Running)
 		{
-			glClearColor(0.1, 0.1, 0.1, 1);
-			glClear(GL_COLOR_BUFFER_BIT);
+			RendererCommand::SetClearColor( { 0.1, 0.1, 0.1, 1 } );
+			RendererCommand::Clear();
+
+			Renderer::BeginScene();
 
 			m_Shader->Bind();
-			m_VertexArray->Bind();
-			glDrawElements(GL_TRIANGLES, m_IndexBuffer->GetCount(), GL_UNSIGNED_INT, nullptr);
+			Renderer::Submit(m_VertexArray);
+
+			Renderer::EndScene();
 
 			for (Layer *layer : m_LayerStack)
 				layer->OnUpdate();

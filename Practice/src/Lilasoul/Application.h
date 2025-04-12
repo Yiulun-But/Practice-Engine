@@ -13,6 +13,8 @@
 #include "Lilasoul/Renderer/Buffer.h"
 #include "Lilasoul/Renderer/VertexArray.h"
 
+#include "Lilasoul/Renderer/OrthographicCamera.h"
+
 namespace Lilasoul {
 
 	class LILASOUL_API Application
@@ -37,10 +39,6 @@ namespace Lilasoul {
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
-
-
-		std::shared_ptr<Shader> m_Shader;
-		std::shared_ptr<VertexArray> m_VertexArray;
 
 	private:
 		static Application* s_Instance;

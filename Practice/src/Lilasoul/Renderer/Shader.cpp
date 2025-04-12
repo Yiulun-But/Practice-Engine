@@ -1,7 +1,9 @@
 #include "lspch.h"
 #include "Shader.h"
+#include "Lilasoul/Log.h"
 
 #include <glad/glad.h>
+#include <glm/gtc/type_ptr.hpp>
 
 namespace Lilasoul {
     Shader::Shader(const std::string &vertexSrc, const std::string &fragmentSrc)
@@ -32,7 +34,8 @@ namespace Lilasoul {
             glDeleteShader(vertexShader);
 
             // Use the infoLog as you see fit.
-            
+            std::string log(infoLog.begin(), infoLog.end());
+            LS_CORE_INFO("Vertex shader compilation error: {0}", log);
             // In this simple program, we'll just leave
             return;
         }
@@ -64,7 +67,8 @@ namespace Lilasoul {
             glDeleteShader(vertexShader);
 
             // Use the infoLog as you see fit.
-            
+            std::string log(infoLog.begin(), infoLog.end());
+            LS_CORE_INFO("Fragment shader compilation error: {0}", log);
             // In this simple program, we'll just leave
             return;
         }
@@ -100,7 +104,8 @@ namespace Lilasoul {
             glDeleteShader(fragmentShader);
 
             // Use the infoLog as you see fit.
-            
+            std::string log(infoLog.begin(), infoLog.end());
+            LS_CORE_INFO("Shader llinking error: {0}", log);
             // In this simple program, we'll just leave
             return;
         }
@@ -120,5 +125,11 @@ namespace Lilasoul {
     void Shader::Unbind() const
     {
         glDeleteProgram(m_RendererID);
+    }
+
+    void Shader::SetUniformMat4(const std::string& name, const glm::mat4 &matrix)
+    {
+        GLint location = glGetUniformLocation(m_RendererID, name.c_str());
+        glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(matrix));
     }
 }

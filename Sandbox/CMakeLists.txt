@@ -13,7 +13,7 @@ target_include_directories(Sandbox PRIVATE
     ${PROJECT_SOURCE_DIR}/Practice/src
 )
 
-target_link_libraries(Sandbox PRIVATE Lilasoul)
+target_link_libraries(Sandbox PRIVATE Lilasoul glm::glm)
 
 foreach(OUTPUTCONFIG ${CMAKE_CONFIGURATION_TYPES})
     string(TOUPPER ${OUTPUTCONFIG} OUTPUTCONFIG_UPPER)
